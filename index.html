@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Angular Project</title>
+    <base href="/">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/JavaScript" src="js/angular.min.js"></script>
+    <script type="text/JavaScript" src="js/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    
+    
+   
+  </head>
+  <body ng-app="myPractice">
+
+  <div ng-include="'../src/common/header.html'"></div>
+  <section>
+    <div class="container-fluid">
+      <div class="col-sm-3 left-nav">
+        <a href="/login">login</a></br>
+        <a href="/home">Home</a></br>
+        <a href="/planet">Planets</a></br>
+        <a href="/contact">Contact us</a> 
+      </div>
+      <div class="col-sm-9 view">
+          <div ng-view>
+            <!-- <p>Content goes here...</p> -->
+          </div>
+      </div>
+    </div>
+  </section> 
+  <div ng-include="'../src/common/footer.html'"></div>
+
+    <!-- js files -->
+    <script src="../src/home/homeController.js"></script>
+    <script src="../src/login/loginController.js"></script>
+    
+  </body>
+</html>

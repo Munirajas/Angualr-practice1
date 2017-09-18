@@ -1,0 +1,10 @@
+<div class="home-wrapper" ng-controller="homeController">
+	<h4>Home page goes here..</h4><hr>	
+	
+	<pre>$location.path() = {{$location.path()}}</pre>
+    <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+    <pre>$route.current.params = {{$route.current.params}}</pre>
+    <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+    <pre>$routeParams = {{$routeParams}}</pre><hr>
+	<button type="button" ng-click="reDirect()">Redirect to contact page</button>
+</div>
