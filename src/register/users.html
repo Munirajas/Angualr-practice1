@@ -1,0 +1,25 @@
+<div class="" ng-controller="usersController">
+
+	<h1> Registered Users </h1>
+	<div class="sw-planets table-responsive">
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Gender</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(key,value) in users">
+					<td>{{value.firstname}}  {{value.lastname}}</td>
+					<td>{{value.Email}}</td>
+					<td>{{value.gender}}</td>
+					<td>{{value.adress}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>

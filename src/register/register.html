@@ -1,0 +1,100 @@
+<div class="" ng-controller="registerController">
+	<h4 class="sw-header">Registration form</h4>
+  <a href="/register/users" class="pull-right"> Registerd Users</a>
+
+
+<form class="form-horizontal" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control"  placeholder="First Name" name="firstname" required 
+          ng-model="username" ng-minlength="8">
+       <p ng-show="userForm.firstname.$error.required && !userForm.firstname.$pristine">Your name is required.</p>  
+       <p ng-show="userForm.firstname.$error.minlength && !userForm.firstname.$pristine">Minimum length should be 8 characters.</p> 
+       <!-- <p ng-show="userForm.firstname.$invalid">Your name is not valid.</p> -->       
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control"  ng-model="lastname" name="lastname" placeholder="Last Name" required>
+      <!-- <p ng-show="userForm.lastname.$invalid && !userForm.lastname.$pristine">You lastname is not valid.</p> -->
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control"  name="Email" placeholder="Email" ng-model="Email" required>
+      <p ng-show="userForm.Email.$error.required && !userForm.Email.$pristine">Your Email is required.</p>  
+      <p ng-show="userForm.Email.$error.email && !userForm.Email.$pristine">You Email is not valid.</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" placeholder="Password" name="Password" ng-model="Password" required />
+      <p ng-show="userForm.Password.$error.required && !userForm.Password.$pristine">Your Password is required.</p>  
+      <p ng-show="userForm.Password.$invalid && !userForm.Password.$pristine">You Password is not valid.</p>
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Conform Password</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" name="cpassword" ng-model="cpassword" placeholder="Confirm Password" required>
+      <p ng-show="userForm.cpassword.$error.required && !userForm.cpassword.$pristine">Your Password is required.</p>  
+      <p ng-show="userForm.cpassword.$invalid && !userForm.cpassword.$pristine">You Password is not valid.</p>
+      <p ng-show="(cpassword != Password) && !userForm.cpassword.$pristine">You Password and Confirm pswd should same.</p>
+    </div>   
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Gender</label>
+    <div class="col-sm-5">
+        <div class="radio">
+            <label>
+                <input type="radio" name="gender" value="male" ng-model="gender">Male               
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="gender" value="female" ng-model="gender"> Female               
+            </label>
+        </div>
+      </div>
+  </div>
+  <div class="form-group">
+  <label for="inputPassword3" class="col-sm-2 control-label">Favorite Colors</label>
+    <div class="col-sm-5">
+        <label class="checkbox-inline">
+            <input type="checkbox" name="favoriteColors" ng-model="userForm.favoriteColors.red"> Red
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="favoriteColors" ng-model="userForm.favoriteColors.blue"> Blue
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="favoriteColors" ng-model="userForm.favoriteColors.green"> Green
+        </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+    <div class="col-sm-5">
+      <textarea type="text" class="form-control" name="Address" ng-model="Address" placeholder="Enter Address"></textarea>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" ng-disabled="userForm.$invalid">Sign in</button>
+    </div>
+  </div>
+</form>
+
+</div>
