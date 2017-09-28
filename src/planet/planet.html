@@ -1,6 +1,7 @@
 <div class="" ng-controller="planetController">
-	<h4>Planet page </h4>
-
+	
+	<h2>All Planets in the table </h2>
+	<p 
 	<div class="sw-planets table-responsive">
 		<table>
 			<thead>
@@ -21,4 +22,10 @@
 			</tbody>
 		</table>
 	</div>
+	<h2>All Planets with Directive </h2>
+	<ul class="planets-list">
+		<li  ng-repeat="planet in planets | orderBy:'name'"><planet-directive></planet-directive></li>
+	</ul>
+
+
 </div>

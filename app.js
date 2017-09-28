@@ -15,9 +15,17 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'src/home/home.html',
     controller: 'homeController',    
   })
-   .when('/planet', {
+  .when('/planet', {
     templateUrl: 'src/planet/planet.html',
     controller: 'planetController',    
+  })
+  .when('/planet/planet-details', {
+    templateUrl: 'src/planet/planet-details.html',
+    controller: 'planetController',    
+  })
+  .when('/planet/:orbital_period', {
+    templateUrl: 'src/planet/planet-details.html',
+    controller: 'planetDetailsController',    
   })
   .when('/register', {
     templateUrl: 'src/register/register.html',
